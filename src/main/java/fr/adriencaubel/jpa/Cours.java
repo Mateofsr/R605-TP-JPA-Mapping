@@ -11,6 +11,9 @@ public class Cours {
     @Column(name = "id")
     private Long id;
 
+    @ManyToOne
+    private Promotion promotion;
+
     @Column(name = "nom")
     private String nom;
 
@@ -19,10 +22,6 @@ public class Cours {
 
     @Column(name = "description")
     private String description;
-
-    public void setName(String name) {
-        this.nom = name;
-    }
 
     public void setDuree(int duree) {
         this.duree = duree;
@@ -40,16 +39,26 @@ public class Cours {
         return description;
     }
 
-    public String getName() {
-        return nom;
-    }
-
-
     public void setId(Long id) {
         this.id = id;
     }
 
     public Long getId() {
         return id;
+    }
+    public void setPromotion(Promotion promotion) {
+        this.promotion = promotion;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public Promotion getPromotion() {
+        return promotion;
+    }
+
+    public String getNom() {
+        return nom;
     }
 }
