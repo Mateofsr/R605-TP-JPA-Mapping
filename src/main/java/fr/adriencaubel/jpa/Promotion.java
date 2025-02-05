@@ -14,7 +14,7 @@ public class Promotion {
     @Column(name = "id")
     private Long id;
 
-    @OneToMany()
+    @OneToMany(mappedBy = "promotion", cascade = CascadeType.ALL)
     @Column(name = "listeCours")
     private List<Cours> cours = new ArrayList<>();
 
